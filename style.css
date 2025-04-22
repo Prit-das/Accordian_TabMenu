@@ -1,0 +1,24 @@
+i{
+    transform: rotate(0deg);
+    transition: all 0.5s ease-in-out;
+}
+.rotate{
+    transform: rotate(180deg);
+    transition: all 0.5s ease-in-out;
+}
+.group{
+    padding: 0.5rem;
+    border-bottom: 2px solid slategray;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.item{
+    padding: 0.5rem 1rem;
+    /* border-radius: 0.5rem; */
+    cursor: pointer;
+}
+.item:hover{
+    color: white;
+    background-color: slategray;
+    transition: all 0.5s ease-in-out;
+}
