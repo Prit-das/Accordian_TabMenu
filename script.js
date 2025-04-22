@@ -1,5 +1,5 @@
+// Accordian
 let accordian = document.querySelector("#accordian-container");
-
 let group = accordian.querySelectorAll(".group");
 
 group.forEach(element => {
@@ -25,14 +25,29 @@ group.forEach(element => {
     })
 });
 
+// Tab menu
 let menu = document.querySelector(".menu");
-
 let items = menu.querySelectorAll(".item");
+let tabContent = document.querySelectorAll('.tabContent');
 
-items.forEach(element => {
+tabContent.forEach(element =>{
+    if (element.classList.contains('active')) {
+        element.style.display = "block";
+    }else{
+        element.style.display = "none";
+    }
+})
+
+items.forEach((element, place) => {
     element.addEventListener('click', () => {
-        console.log(element.innerHTML);
+        tabContent.forEach((content, index) =>{
+            if (place == index) {
+                element.classList.add('.item:hover');
+                content.style.display = 'block';
+            }else{
+                element.classList.remove('.item:hover');
+                content.style.display = 'none';
+            }
+        })
     });
 });
-
-
