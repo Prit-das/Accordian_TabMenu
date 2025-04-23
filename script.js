@@ -40,14 +40,19 @@ tabContent.forEach(element =>{
 
 items.forEach((element, place) => {
     element.addEventListener('click', () => {
-        tabContent.forEach((content, index) =>{
-            if (place == index) {
-                element.classList.add('.item:hover');
+
+        items.forEach(item => {
+            item.classList.remove('tabactive');
+        });
+
+        element.classList.add('tabactive');
+
+        tabContent.forEach((content, index) => {
+            if (place === index) {
                 content.style.display = 'block';
-            }else{
-                element.classList.remove('.item:hover');
+            } else {
                 content.style.display = 'none';
             }
-        })
+        });
     });
 });
